@@ -3,7 +3,7 @@ import Login from "./components/Login";
 import { useSelector } from "react-redux";
 
 function App() {
-  const isLoggedIn = useSelector(state => state.ui.isLoggedIn);
+  const isLoggedIn = useSelector(state => state.user.isLoggedIn);
   return (
     <div className="App">
       {isLoggedIn===false && <Login/>}

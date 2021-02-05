@@ -1,6 +1,5 @@
 const initialState = {
-    page : "",
-    isLoggedIn : false
+    page : ""
 };
 
 const reducer =  (state = initialState, action)=>{
