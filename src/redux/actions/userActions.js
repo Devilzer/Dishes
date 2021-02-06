@@ -1,4 +1,7 @@
+import { showNotification } from "../../config/noty";
+
 export const userLogin = ()=>{
+    showNotification("Login Success");
     return{
         type : "LOGIN_USER"
     };
@@ -10,6 +13,7 @@ export const setCurrentUser = (user)=>{
     };
 };
 export const logoutUser = ()=>{
+    showNotification("Log Out Success");
     return{
         type : "LOGOUT_USER"
     };

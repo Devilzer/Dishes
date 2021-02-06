@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { updateUser, updateVote } from "../redux/actions";
+import { showNotification } from "../config/noty";
 
 
 function useForceUpdate(){
@@ -28,21 +29,21 @@ function DishCard({dish}) {
             let index = updatedUser.likedDishes.findIndex(id=>id===dish.id);
             updatedUser.likedDishes.splice(index,1);
             dispatch(updateUser(updatedUser));
-
+            
             let updatedDish = dish;
             if(dish.votes>0){
                 updatedDish.votes--;
             }
-            console.log(dish.votes);
             dispatch(updateVote(updatedDish));
+            showNotification("Vote Removed");
         }
         else{
             if(user.likedDishes.length===3){
-                console.log("can't vote more than 3");
+                showNotification("can't vote more than 3 times");
                 return;
             }
             if(user.username === dish.createdBy){
-                console.log("can't vote own dishes");
+                showNotification("can't vote own dishes");
                 return;
             }
             let updatedUser = user;
@@ -51,8 +52,8 @@ function DishCard({dish}) {
 
             let updatedDish = dish;
             updatedDish.votes++;
-            console.log(dish.votes);
             dispatch(updateVote(updatedDish));
+            showNotification("Vote added");
         }
         forceUpdate();
     }
