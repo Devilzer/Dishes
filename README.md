@@ -17,6 +17,20 @@
 2. Install all dependencies by `npm install`
 3. `npm start`
 
+## Login details.
+
+* username : "deepak" ,  password : "deepak123"
+* username : "aman"   ,  password : "aman123"
+* username : "anand"  ,  password : "anand123"
+* username : "neha"   ,  password : "neha123"
+* username : "nikhil" ,  password : "nikhil123"
+* username : "jay"    ,  password : "jay123"
+* username : "anil"   ,  password : "anil123"
+* username : "ankit"  ,  password : "ankit123"
+* username : "ankit"  ,  password : "ankit123"
+* username : "pankaj" ,  password : "pankaj123"
+
+
 ## App Overview.
 
 #### LogIn.
