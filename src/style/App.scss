@@ -66,8 +66,22 @@ body {
     text-align: center;
     background-color: #161b22;
     height: 62px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     h1 {
       line-height: 62px;
+      margin-left: 5%;
+    }
+    h2 {
+      line-height: 62px;
+      margin-right: 5%;
+      padding: 0 10px;
+      background-color: #58a6ff2c;
+    }
+    h2:hover {
+      cursor: pointer;
+      color: #58a6ff;
     }
   }
   .nav-bar {

@@ -1,6 +1,9 @@
 import React from 'react';
+import { useDispatch, useSelector } from "react-redux";
 
 function DishCard({dish,index}) {
+    const dispatch = useDispatch();
+    const user = useSelector(state => state.user.currentUser);
     return (
         <div className="dish-card">
             <div className="img-container">

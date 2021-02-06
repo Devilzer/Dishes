@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import AddDish from "./AddDish";
 import Vote from "./Vote";
 import Results from "./Results";
-
+import { useDispatch } from "react-redux";
+import { logoutUser } from "../redux/actions";
 
 function Home() {
+    const dispatch = useDispatch();
     const [page, setPage] = useState("addDish");
     var addClass = "";
     var voteClass = "";
@@ -31,6 +33,9 @@ function Home() {
                     <h1>
                         Dishes <i className="fas fa-utensils"></i>
                     </h1>
+                    <h2 onClick={()=>dispatch(logoutUser())}>
+                        LogOut
+                    </h2>
                 </div>
                 <div className="nav-bar">
                     <Link to="/">
