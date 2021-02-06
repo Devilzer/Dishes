@@ -2,21 +2,22 @@ import React,{useState} from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { updateUser, updateVote } from "../redux/actions";
 
+
 function useForceUpdate(){
     const [value, setValue] = useState(0); // integer state
     return () => setValue(value => value + 1); // update the state to force render
-}
+};
 
 function DishCard({dish}) {
     const forceUpdate = useForceUpdate();
-    // const [dish, setDish] = useState(dishitem);
+    
     const dispatch = useDispatch();
     const user = useSelector(state => state.user.currentUser);
 
     var cardClass ="";
     if(user.likedDishes.includes(dish.id)){
         cardClass = "dish-card dish-selected";
-        console.log("hello")
+       
     }else{
         cardClass = "dish-card ";
     }
