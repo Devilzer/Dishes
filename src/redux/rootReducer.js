@@ -19,4 +19,4 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig,rootReducer);
 
-export default rootReducer;
+export default persistedReducer;
