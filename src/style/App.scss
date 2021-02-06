@@ -210,7 +210,7 @@ body {
       border-radius: 12.5px;
       border: 1.5px solid #202731;
       overflow: hidden;
-      // box-shadow: 0 0 2.5px 5px #58a6ff;
+
       .img-container {
         width: 100%;
         height: 175px;
@@ -250,6 +250,9 @@ body {
         margin-top: 10px;
         font-size: 14px;
       }
+    }
+    .dish-selected {
+      box-shadow: 0 0 2.5px 5px #58a6ff;
     }
   }
 }

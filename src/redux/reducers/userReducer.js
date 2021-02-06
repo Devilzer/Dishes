@@ -1,48 +1,57 @@
 const initialState = {
     users :[{
             username : "deepak",
-            password : "deepak123"
+            password : "deepak123",
+            likedDishes : []
         },
         {
             username : "aman",
-            password : "aman123"
+            password : "aman123",
+            likedDishes : []
         },
         {
             username : "anand",
-            password : "anand123"
+            password : "anand123",
+            likedDishes : []
         },
         {
             username : "neha",
-            password : "neha123"
+            password : "neha123",
+            likedDishes : []
         },
         {
             username : "nikhil",
-            password : "nikhil123"
+            password : "nikhil123",
+            likedDishes : []
         },
         {
             username : "jay",
-            password : "jay123"
+            password : "jay123",
+            likedDishes : []
         },
         {
             username : "anil",
-            password : "anil123"
+            password : "anil123",
+            likedDishes : []
         },
         {
             username : "ankit",
-            password : "ankit123"
+            password : "ankit123",
+            likedDishes : []
         },
         {
             username : "shiva",
-            password : "shiva123"
+            password : "shiva123",
+            likedDishes : []
         },
         {
             username : "pankaj",
-            password : "pankaj123"
+            password : "pankaj123",
+            likedDishes : []
         },
     ],
     currentUser:{},
     isLoggedIn : false,
-    likedDishes : []
 };
 
 const reducer =  (state = initialState, action)=>{
@@ -62,6 +71,14 @@ const reducer =  (state = initialState, action)=>{
                 ...state,
                 isLoggedIn : false,
                 currentUser : {}
+            };
+        case "UPDATE_USER":
+            var index = state.users.findIndex(user=>user.username===action.payload.username);;
+            let usersAfter = state.users;
+            usersAfter[index] = action.payload;
+            return{
+                ...state,
+                users : usersAfter
             };
         default:
             return state;

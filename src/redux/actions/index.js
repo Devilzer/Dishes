@@ -1,2 +1,2 @@
-export {userLogin, setCurrentUser, logoutUser} from "./userActions";
-export {addDish} from "./dishActions";
+export {userLogin, setCurrentUser, logoutUser ,updateUser} from "./userActions";
+export {addDish, updateVote} from "./dishActions";

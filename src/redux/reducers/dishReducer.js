@@ -9,6 +9,15 @@ const reducer =  (state = initialState, action)=>{
                 ...state,
                 dish : [...state.dish,action.payload]
             };
+        case "UPDATE_VOTE":
+            const index = state.dish.findIndex(dish=>dish.id===action.payload.id);
+            let dishAftAdd = state.dish;
+            dishAftAdd[index] = action.payload;
+            return{
+                ...state,
+                dish : dishAftAdd
+            };
+
         default:
             return state;
     }

@@ -5,3 +5,12 @@ export const addDish = (dish)=>{
         payload : dish
     };
 };
+
+export const updateVote = (dish)=>{
+    return{
+        type : "UPDATE_VOTE",
+      payload : dish
+    };
+};
+
+

@@ -14,3 +14,10 @@ export const logoutUser = ()=>{
         type : "LOGOUT_USER"
     };
 };
+
+export const updateUser = (user)=>{
+    return{
+        type : "UPDATE_USER",
+        payload : user
+    };
+};
