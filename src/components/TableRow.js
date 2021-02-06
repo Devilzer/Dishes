@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 
 function TableRow({dish,index}) {
     const user = useSelector(state => state.user.currentUser);
+    //setting highlight class
     var Class ="";
     if(user.likedDishes.includes(dish.id)){
         Class = "tr-s";

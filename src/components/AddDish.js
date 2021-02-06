@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+//filebase64 for storing images in 64bit format
 import FileBase64 from "react-file-base64";
 import { useDispatch ,useSelector } from "react-redux";
 import { addDish } from "../redux/actions";
@@ -15,6 +16,7 @@ function AddDish() {
         createdBy : user.username
     });
 
+    //dish form submit handler function. 
     const handleSubmit = ()=>{
         if(value.name==="" || value.description==="" || value.image==""){
             return;

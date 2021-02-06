@@ -8,6 +8,7 @@ import { logoutUser } from "../redux/actions";
 
 function Home() {
     const dispatch = useDispatch();
+    //for updating navbar styles
     const [page, setPage] = useState("addDish");
     var addClass = "";
     var voteClass = "";

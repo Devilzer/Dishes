@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateUser, updateVote } from "../redux/actions";
 import { showNotification } from "../config/noty";
 
-
+// coustom function hook for forcfully rerendering the component
 function useForceUpdate(){
     const [value, setValue] = useState(0); // integer state
     return () => setValue(value => value + 1); // update the state to force render
@@ -23,6 +23,7 @@ function DishCard({dish}) {
         cardClass = "dish-card ";
     }
 
+    //function to handle card click for adding and removing votes
     const handleCardClick = ()=>{
         if(user.likedDishes.includes(dish.id)){
             let updatedUser = user;
@@ -57,7 +58,7 @@ function DishCard({dish}) {
         }
         forceUpdate();
     }
-    // dish-selected
+    
     return (
         <div className={cardClass}>
             <div className="img-container" onClick={handleCardClick}>

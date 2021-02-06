@@ -6,6 +6,7 @@ import TableRow from "./TableRow";
 function Results() {
     const dishes = useSelector(state => state.dish.dish);
     var sorted = [...dishes];
+    //function for sorting
     function compare(a, b) {
         const votesA = a.votes;
         const votesB = b.votes;

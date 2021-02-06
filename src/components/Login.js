@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { userLogin, setCurrentUser } from "../redux/actions";
+import { showNotification } from "../config/noty";
 
 function Login() {
     const [value, setValue] = useState({
@@ -11,23 +12,26 @@ function Login() {
     const users = useSelector(state => state.user.users);
 
     const handleClick = ()=>{
+        //checking if any field is empty while submit
         if(value.username==="" || value.password===""){
-            console.log("pls fill the fields");
+            showNotification("please fill all the fields");
             return;
         }
+        //search for user
         var index = users.findIndex(user=>user.username===value.username);
         if(index===-1){
-            console.log("invalid username or password");
+            showNotification("invalid username or password");
             return;
         }
         else{
+            //match password
             if(users[index].password===value.password){
                 dispatch(userLogin());
                 dispatch(setCurrentUser(users[index]));
                 console.log("logged in");
             }
             else{
-                console.log("invalid username or password");
+                showNotification("invalid username or password");
                 return;
             }
         }
