@@ -1,5 +1,6 @@
 import './style/App.scss';
 import Login from "./components/Login";
+import Home from "./components/Home";
 import { useSelector } from "react-redux";
 
 function App() {
@@ -7,10 +8,7 @@ function App() {
   return (
     <div className="App">
       {isLoggedIn===false && <Login/>}
-      {isLoggedIn===true && <h1>
-        hello there
-      </h1>}
-      
+      {isLoggedIn===true && <Home/>}
     </div>
   );
 }
