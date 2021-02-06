@@ -41,7 +41,8 @@ const initialState = {
         },
     ],
     currentUser:{},
-    isLoggedIn : false
+    isLoggedIn : false,
+    likedDishes : []
 };
 
 const reducer =  (state = initialState, action)=>{
